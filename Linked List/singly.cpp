@@ -45,6 +45,7 @@ void List :: add(int data, Node* predecessor){
 
 void List :: removefromHead(){
   Node* toDelete;
+  toDelete = HEAD;
   HEAD = toDelete -> next;
   delete (toDelete);
 }
