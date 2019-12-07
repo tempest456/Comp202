@@ -26,8 +26,8 @@ void Stack :: push(int data){
         newNode -> info = data;
         newNode -> next = HEAD;
         HEAD = newNode;
+        count++;
     }
-    count++;
 }
 
 int Stack :: pop(){
@@ -42,9 +42,9 @@ int Stack :: pop(){
         value = toDelete -> info;
         HEAD = toDelete -> next;
         delete toDelete;
+        count--;
         return value;
     }
-    count--;
 }
 
 int Stack :: top(){
@@ -83,6 +83,9 @@ int main(){
     cout << S.top() << endl;
     cout << S.pop() <<endl;
     cout << "*****************************"  << endl;
+    S.push(69);
+    S.push(420);
+    S.push(699);
     S.traverse();
     return 0;
 }
