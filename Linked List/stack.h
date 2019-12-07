@@ -9,13 +9,11 @@ public:
 class Stack{
 private:
     Node *HEAD;
-    Node *TAIL;
 public:
     Stack();
     ~Stack();
 
     bool isEmpty();            //checks if the stack is empty
-
     void push(int data);       //inserts elements into stack
     int pop();                 //removes the top element
     int top();                 //returns the top element
