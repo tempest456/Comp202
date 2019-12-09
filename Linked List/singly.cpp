@@ -36,7 +36,7 @@ void List :: addtoTail(int data){
   TAIL = newNode;
 }
 
-void List :: add(int data, Node* predecessor){
+void List :: add(int data, Node* &predecessor){
   Node* newNode = new Node();
   newNode -> info = data;
   newNode -> next = predecessor -> next;
@@ -109,7 +109,7 @@ void List :: traverse(){
   }
 }
 
-bool List :: retrieve(int data, Node *outputPtr){
+bool List :: retrieve(int data, Node* &outputPtr){
   Node* temp;
   temp = HEAD;
   while ((temp != NULL) && (temp ->info != data))
@@ -148,10 +148,15 @@ int main(){
   cout << "*****************************"  << endl;
   linked.retrieve(7, outputPtr);
   cout << &outputPtr << endl;
+  linked.retrieve(99, outputPtr);
+  cout << &outputPtr << endl;
   linked.traverse();
   cout << "*****************************"  << endl;
   linked.removefromHead();
-  //linked.add(69, outputPtr);
+  linked.add(69, outputPtr);
+  linked.retrieve(69, outputPtr);
+  cout << &outputPtr <<endl;
+  linked.add(100, outputPtr);
   linked.traverse();
   return 0;
 }

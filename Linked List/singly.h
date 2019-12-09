@@ -18,7 +18,7 @@ public:
   bool isEmpty();
   void addtoHead(int data);
   void addtoTail(int data);
-  void add(int data, Node *predecessor);
+  void add(int data, Node* &predecessor);
 
   //removal
   void removefromHead();
@@ -26,5 +26,5 @@ public:
 
   bool search(int data);
   void traverse();
-  bool retrieve(int data, Node *outputPtr);
+  bool retrieve(int data, Node* &outputPtr);
 };
